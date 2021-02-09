@@ -27,6 +27,17 @@ When cloning, do for the first time:
 - Create a secret key, tape in your terminal:
     - openssl rand -hex 32
 
+- Create your local database:
+    - Connect to postgres:
+        - Mac: psql postgres
+        - Ubuntu: sudo -i psql -u postgres
+    - Create database:
+        - CREATE DATABASE morseapp;
+    - Create new user:
+        - CREATE USER username WITH PASSWORD 'yourpassword';
+    - Grant privilege to database to your user:
+        - GRANT ALL PRIVILEGES ON DATABASE morseapp TO username;
+
 - Create python virtual environment:
     - python3 -m venv .venv
     - source venv/bin/activate
