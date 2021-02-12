@@ -1,0 +1,1 @@
+web: gunicorn morse_app.wsgi --log-file -
