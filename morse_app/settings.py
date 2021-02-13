@@ -39,6 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 3rd party
+    'rest_framework',
+
+
+    # local
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +63,9 @@ ROOT_URLCONF = 'morse_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.normpath(os.path.join(BASE_DIR, 'templates')),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,6 +134,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Custom User authentification
+AUTH_USER_MODEL = 'users.User'
 
 # Email config for reset and change password
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
