@@ -135,8 +135,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Custom User authentification
-AUTH_USER_MODEL = 'users.User'
+# Custom User authentication
+AUTH_USER_MODEL = 'users.CustomUser'
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "users.auth.EmailAuthenticationBackend",
+]
 
 # Email config for reset and change password
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

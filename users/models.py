@@ -1,13 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import AbstractUser
 
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from .managers import CustomUserManager
 
 
-
-class User(AbstractBaseUser):
+class CustomUser(AbstractUser):
     """ Class to save new user in the database """
     username = models.CharField(max_length=255, unique=True, blank=False, null=False)
     email = models.EmailField(_('email address'), unique=True, blank=False, null=False)
