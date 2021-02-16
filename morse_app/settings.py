@@ -39,14 +39,30 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # 3rd party
     'rest_framework',
-
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     # local
     'users',
 ]
+
+# django-allauth config
+SITE_ID = 1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+
+# Rest_framework config
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,9 +79,7 @@ ROOT_URLCONF = 'morse_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.normpath(os.path.join(BASE_DIR, 'templates')),
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,6 +90,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 WSGI_APPLICATION = 'morse_app.wsgi.application'
@@ -137,10 +156,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Custom User authentication
 AUTH_USER_MODEL = 'users.CustomUser'
-AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    "users.auth.EmailAuthenticationBackend",
-]
+
 
 # Email config for reset and change password
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -11,6 +11,7 @@ class CustomUser(AbstractUser):
     username = models.CharField(max_length=255, unique=True, blank=False, null=False)
     email = models.EmailField(_('email address'), unique=True, blank=False, null=False)
     is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
