@@ -61,6 +61,12 @@ When cloning, do for the first time:
     - python manage.py runserver
     
 - url for create new users:
-    - http://127.0.0.1:8000/api/user/create
+    - http://127.0.0.1:8000/api/user/users/create/
+
+- url for login:
+    - http://127.0.0.1:8000/api/auth/login/
+    
+url for registration:
+
 
 Add-project-description-here | Voyage-27 | https://chingu.io/ | Twitter: https://twitter.com/ChinguCollabs
