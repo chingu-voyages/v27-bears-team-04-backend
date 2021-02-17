@@ -1,6 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import CreateView
-from django.urls import reverse_lazy
+from rest_framework import generics
+
+from users.serializers import CustomUserSerializer
 
 
-# Create your views here.
+class CreateUserView(generics.CreateAPIView):
+    """ Create a new user in the system """
+
+    serializer_class = CustomUserSerializer
