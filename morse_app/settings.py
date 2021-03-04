@@ -85,11 +85,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'https://chingu-morseapp-v27.herokuapp.com'
-    'http://localhost:8080',
-    'http://localhost:8000',
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'https://chingu-morseapp-v27.herokuapp.com'
+#     'http://localhost:8080',
+#     'http://localhost:8000',
+# )
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'morse_app.urls'
 
