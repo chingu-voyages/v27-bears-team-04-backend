@@ -60,6 +60,7 @@ SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Rest_framework config
 REST_FRAMEWORK = {
@@ -85,6 +86,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
+    'https://chingu-morseapp-v27.herokuapp.com'
     'http://localhost:8080',
     'http://localhost:8000',
 )
