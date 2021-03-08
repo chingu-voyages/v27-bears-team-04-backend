@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
     # local
     'users',
+    'posts',
 ]
 
 # django-allauth config
