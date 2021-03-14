@@ -60,13 +60,14 @@ When cloning, do for the first time:
 - load django server:
     - python manage.py runserver
     
-- url for create new users:
-    - http://127.0.0.1:8000/api/user/users/create/
+- url for sign up:
+    - http://127.0.0.1:8000/user/register/
 
 - url for login:
-    - http://127.0.0.1:8000/api/auth/login/
+    - http://127.0.0.1:8000/user/login/
     
-url for registration:
+- url where the api is deployed:
+    - https://chingu-morseapp-v27.herokuapp.com/
 
 
 Add-project-description-here | Voyage-27 | https://chingu.io/ | Twitter: https://twitter.com/ChinguCollabs
